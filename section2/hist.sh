@@ -11,3 +11,8 @@ kubectl get pods
 kubectl replace -f replicaset-definition.yaml
 kubectl scale --replicas=6 -f replicaset-definition.yaml
 kubectl scale --replicas=6 replicaset myapp-rs
+
+
+k get all
+k run nginx --image=nginx
+k run nginx --image=nginx --dry-run=client -o yaml # output yaml

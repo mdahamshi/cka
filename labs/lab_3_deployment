@@ -1,0 +1,15 @@
+k get pods
+k get rs # replicasets
+k get deployments
+k descripe deployments
+busybox888
+
+k logs deployments/frontend-deployment 
+
+image can't be pulled
+
+kind:
+deployment --> Deployment
+
+k create deployment httpd-frontend --image=httpd:2.4-alpine --replicas=3 --dry-run=client -o yaml > dd.yaml
+k apply -f dd.yaml
