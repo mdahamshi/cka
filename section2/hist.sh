@@ -1,0 +1,13 @@
+kubectl create -f rc-defintion.yaml
+kubectl get replicacontroller
+kubectl get pods
+kubectl get pods -o wide
+
+kuebectl create -f replicaset-definition.yaml
+kubectl get replicaset
+kubectl get pods
+
+# update replicaset to 6
+kubectl replace -f replicaset-definition.yaml
+kubectl scale --replicas=6 -f replicaset-definition.yaml
+kubectl scale --replicas=6 replicaset myapp-rs

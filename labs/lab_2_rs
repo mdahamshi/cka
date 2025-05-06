@@ -1,0 +1,22 @@
+kubectl get pods
+0
+kubectl get replicasets
+0
+1
+
+kubectl describe replicasets new-replica-set 
+
+kubectl logs new-replica-set-5ww2p 
+
+k delete pod new-replica-set-5ww2p 
+
+k apply -f /root/replicaset-definition-1.yaml
+
+apiVersion  apps/v1
+
+
+selector.matchLabels  tier: frontend
+
+k delete rs --all
+
+kubectl scale replicaset new-replica-set --replicas=5

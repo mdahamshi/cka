@@ -1,0 +1,21 @@
+kubectl get pods --namespace default
+
+kubectl run nginx-pod --image nginx
+
+kubectl get pods --namespace default
+
+kubectl describe pod newpods-jwxb9 
+
+kubectl get pod newpods-jwxb9  -o yaml | grep image
+
+kubectl get pods -o wide | awk '{print $7}'
+
+kubectl describe pod webapp 
+
+kubectl get pod webapp -w
+
+kubectl delete pod webapp 
+
+
+
+kubectl apply -f ../yaml/redis.yaml 
