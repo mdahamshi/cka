@@ -1,0 +1,33 @@
+kubectl get svc  --no-headers | wc -l
+
+k get svc | awk 'NR == 2 {print $2}'
+
+k describe service kubernetes | grep -i targetport
+
+
+k get svc kubernetes --show-labels 
+
+k get endpoints kubernetes 
+
+k get deployments --no-headers | wc -l
+
+ k get deployment simple-webapp-deployment -o=jsonpath="{.spec.template.spec.containers[*].image}"
+
+ apiVersion: v1
+kind: Service
+metadata:
+  name: webapp-service
+  namespace: default
+spec:
+  ports:
+  - nodePort: 30080
+    port: 8080
+    targetPort: 8080
+  selector:
+    name: simple-webapp
+  type: NodePort
+
+  k create -f service-defintion.yaml
+  
+
+

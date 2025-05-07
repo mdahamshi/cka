@@ -4,7 +4,7 @@ metadata:
   name: myapp-pod
   labels:
     app: myapp
-    tier: frontend
+    tier: backend
 spec:
   containers:
     - name: nginx-container

@@ -16,3 +16,6 @@ kubectl scale --replicas=6 replicaset myapp-rs
 k get all
 k run nginx --image=nginx
 k run nginx --image=nginx --dry-run=client -o yaml # output yaml
+
+k get services # get svc == get services
+
