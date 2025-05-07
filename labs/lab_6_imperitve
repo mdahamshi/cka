@@ -1,0 +1,21 @@
+ k run nginx-pod --image=nginx:alpine
+
+
+ k run redis --image=redis:alpine --labels=tier=db
+
+ k expose pod redis --port=6379 --name=redis-service --target-port=6379 --type=ClusterIP 
+
+ k create deployment webapp --image=kodekloud/webapp-color --replicas=3
+
+ k run custom-nginx --image=nginx --port=8080
+
+
+ k create ns dev-ns
+
+ k create deployment redis-deploy --namespace=dev-ns --image=redis --replicas=2
+
+ k run httpd --image=httpd:alpine --namespace=default 
+
+ k expose pod httpd --port=80 --target-port=80 --name=httpd --type=ClusterIP
+
+ 

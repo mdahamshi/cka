@@ -19,3 +19,7 @@ k run nginx --image=nginx --dry-run=client -o yaml # output yaml
 
 k get services # get svc == get services
 
+k create namespace mynamespace
+k config set-context --current --namespace=mynamespace
+
+k apply -f redis.yaml

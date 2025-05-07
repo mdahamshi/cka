@@ -1,0 +1,11 @@
+kubectl get pods --selector=env=dev --no-headers | wc -l
+
+ k get pods --show-labels | grep dev | wc -l
+
+
+ kubectl get pods --selector=bu=finance --no-headers | wc -l
+
+ k get all --selector=env=prod --no-headers  | wc -l
+
+ k get pods --selector=env=prod,bu=finance,tier=frontend
+ 

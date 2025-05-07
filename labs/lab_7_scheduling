@@ -1,0 +1,10 @@
+ k apply -f nginx.yaml 
+
+
+   nodeName: node01
+
+
+ k apply -f nginx.yaml --force
+
+ k replace --force -f nginx
+ 

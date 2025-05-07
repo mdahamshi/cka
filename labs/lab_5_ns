@@ -1,0 +1,14 @@
+k get ns --no-headers | wc -l
+10
+
+ k get pods --namespace=research --no-headers | wc -l
+ 2
+
+ k run redis --image=redis --namespace finance
+
+ k get pods -A | grep blue | awk '{print $1}'
+
+ db-services
+
+ db-service.dev.svc.cluster.local:6379
+ 
