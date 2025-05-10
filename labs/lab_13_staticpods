@@ -1,0 +1,27 @@
+ls /etc/kubernetes/manifests | wc -l
+
+  cat kube-apiserver.yaml |grep image
+
+  vi /etc/kubernetes/manifests/busybox.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: static-busybox
+  labels:
+    app: busybox
+spec:
+  containers:
+  - name: busybox
+    image: busybox
+    command: ["sleep", "1000"]
+
+
+ssh node01
+grep -i staticpod /var/lib/kubelet/config.yaml
+
+ rm /etc/just-to-mess-with-you/greenbox.yaml 
+
+ k delete pod static-greenbox-node01 
+
+ 

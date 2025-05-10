@@ -1,0 +1,17 @@
+k describe pod rabbit
+
+k delete pod rabbit 
+
+OOMKilled
+
+    Limits:
+      memory:  10Mi
+    Requests:
+      memory:     5Mi
+
+
+resources:
+  limits:
+    memory: "20Mi"
+
+

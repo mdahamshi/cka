@@ -1,0 +1,26 @@
+k get daemonsets.apps  -A --no-headers | wc -l
+
+k get daemonsets.apps  -A 
+
+k describe daemonsets.apps --namespace=kube-system kube-proxy 
+
+k describe daemonsets.apps --namespace kube-flannel kube-flannel-ds 
+
+
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: elasticsearch
+  namespace: kube-system
+spec:
+  template:
+    metadata:
+      labels:
+        app: elasticsearch
+    spec:
+      containers:
+        - name: elasticsearch
+          image: registry.k8s.io/fluentd-elasticsearch:1.20
+  selector:
+    matchLabels:
+      app: elasticsearch
