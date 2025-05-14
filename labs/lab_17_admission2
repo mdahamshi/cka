@@ -1,0 +1,19 @@
+kubectl create secret tls webhook-server-tls \
+  --cert=/root/keys/webhook-server-tls.crt \
+  --key=/root/keys/webhook-server-tls.key \
+  -n webhook-demo
+
+kubectl get secret webhook-server-tls -n webhook-demo
+
+kubectl describe secret webhook-server-tls -n webhook-demo
+
+k apply -f /root/webhook-deployment.yaml 
+
+k apply -f webhook-service.yaml 
+
+k apply -f webhook-configuration.yaml 
+
+k get pod -n webhook-demo webhook-server-8b577957b-t46ng -o yaml
+
+Error from server: error when creating "pod-with-conflict.yaml": admission webhook "webhook-server.webhook-demo.svc" denied the request: runAsNonRoot specified, but runAsUser set to 0 (the root user)
+

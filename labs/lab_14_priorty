@@ -1,0 +1,35 @@
+k get priorityclasses
+
+
+apiVersion: scheduling.k8s.io/v1
+kind: PriorityClass
+metadata:
+  name: low-priority
+value: 1000
+description: "This priority class should be used for low-priority pods."
+globalDefault: false
+preemptionPolicy: PreemptLowerPriority
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: low-prio-pod
+  name: low-prio-pod
+spec:
+  containers:
+  - image: nginx
+    name: low-prio-pod
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+  priorityClassName: low-priority
+status: {}
+
+k apply -f low-prio-pod.yaml
+
+kubectl get pods -o custom-columns="NAME:.metadata.name,PRIORITY:.spec.priorityClassName"
+
+k get pod critical-app  -o yaml > cp.yaml

@@ -1,0 +1,17 @@
+k get pods -A
+ kube-scheduler-controlplane  
+
+ k describe pod --namespace=kube-system kube-scheduler-controlplane | grep -i image
+ registry.k8s.io/kube-scheduler:v1.32.0
+
+  k get serviceaccounts -n kube-system 
+
+  k get clusterrolebindings
+
+  k apply -f /root/my-scheduler-configmap.yaml 
+
+k apply -f /root/my-scheduler.yaml 
+
+schedulerName: my-scheduler
+
+k apply -f nginx-pod.yaml

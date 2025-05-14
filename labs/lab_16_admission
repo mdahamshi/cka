@@ -1,0 +1,11 @@
+authinticate user
+
+k describe pod -n kube-system  kube-apiserver-controlplane 
+
+k run nginx -n blue --image=nginx
+
+vi /etc/kubernetes/manifests/kube-apiserver.yaml 
+
+NamespaceAutoProvision
+
+

@@ -1,0 +1,5 @@
+k logs -f webapp-1
+
+ WARNING in event-simulator: USER5 Failed to Login as the account is locked due to MANY FAILED ATTEMPTS.
+
+ 
