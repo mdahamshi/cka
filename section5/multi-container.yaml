@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-pod
+  labels:
+    app: myapp
+    tier: backend
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx
+    - name: redis-container
+      image: redis123
+    - name: mysql-container
+      image: mysql123
